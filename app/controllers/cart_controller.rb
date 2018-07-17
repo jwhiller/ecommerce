@@ -11,7 +11,13 @@ redirect_to root_url
   end
 
   def view_order
+    @line_items = LineItem.all
   end
+def delete_from_cart
+line_item = LineItem.find(params[:line_item_id])
+line_item.destroy
+redirect_to view_order_path
+end
 
   def checkout
   end
