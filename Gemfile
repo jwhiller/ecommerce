@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.1'
-
+gem 'binding_of_caller'
 gem 'bootstrap-sass'
 gem 'better_errors'
 gem 'devise'
