@@ -34,13 +34,11 @@
   <strong>Category:</strong>
   <%= @product.category.name %>
 </p>
-<!-- <p>
-  <strong>Image:</strong>
-  <%= @product.image %>
-</p> -->
-
-<p> <%= image_tag @product.image, size: 200 %></p>
-
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<p>
+  <!-- <strong>Image:</strong> -->
+  <%= image_tag @product.image, size: 200 %>
+</p>
+<% if can? :update, @product %>
+  <%= link_to 'Edit', edit_product_path(@product) %>
+  <%= link_to 'Back', products_path%>
+<% end %>

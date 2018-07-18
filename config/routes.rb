@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   get  'view_order' =>  'cart#view_order'
   get 'checkout' => 'cart#checkout'
 
-  post 'delete_from_cart' => 'cart#delete_from_cart'
+  delete 'delete_from_cart' => 'cart#delete_from_cart'
+
+  post 'order_complete' => 'cart#order_complete'
 
   devise_for :users
   get 'categorical' => 'storefront#items_by_category'
