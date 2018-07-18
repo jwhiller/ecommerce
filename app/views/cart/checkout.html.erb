@@ -25,8 +25,13 @@
 <p>
   <strong>Order Subtotal:</strong> <%= number_to_currency @order.subtotal %> <br>
   <strong>Order Tax:</strong> <%= number_to_currency @order.sales_tax %> <br>
-  <strong>Order Grand Total:</strong> <%= number_to_currency @order.grand_total %>
+  <strong>Grand Total:</strong> <%= number_to_currency @order.grand_total %>
 </p>
+
+<div style="display:inline-block">
+  <%= link_to "Empty Cart", cancel_checkout_path(order_id: @order.id), method: :post,
+    class: "btn btn-danger", data: {confirm: "Are you sure?"} %>
+</div>
 
 <div style = 'display:inline-block;'>
 	<%= form_tag order_complete_path do %>

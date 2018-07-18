@@ -1,5 +1,11 @@
 
-<h1>Welcome to Tech Talent South Store</h1>
+<h1>Welcome to Ninja Panda</h1>
+
+<% if current_user.nil? %>
+<h5>Take a look around</h5>
+<% else %>
+<h5> <strong><%= current_user.name %></strong>, have a look around</h5>
+<% end %>
 
 
 <%= render 'productloop' %>
